@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleCard = (props) => {
-    const {date,name,time,poster,profile}=props
+    const { date, name, time, poster, profile, CardTitle } = props
     return (
         <div className='mt-5'>
             <div className="card w-100 bg-base-100 shadow-xl">
@@ -21,24 +21,24 @@ const SingleCard = (props) => {
                         </div>
                         <div className="text-center flex gap-2">
                             <p>
-                             {time}
+                                {time}
                             </p>
                             <p>
-                            min read
+                                min read
                             </p>
                         </div>
                     </div>
                     <div className="">
                         <h1 className='mt-4 font-bold text-lg' >
-                        This is my fast
+                            {CardTitle}
                         </h1>
-                        
-                        <p className='mt-4 '>
+
+                        <p className='p-4 '>
                             #beginners  #programming
-                            </p>
-                            <a  href="" className='mt-5 underline decoration-solid decoration-blue-500 text-blue-500'>
+                        </p>
+                        <a href="" className='mt-5 underline decoration-solid decoration-blue-500 text-blue-500'>
                             Mark as read
-                            </a>
+                        </a>
                     </div>
                 </div>
             </div>
