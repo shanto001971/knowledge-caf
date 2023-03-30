@@ -39,6 +39,15 @@ const Footer = () => {
             </p>
            </div>
 
+           <div className="">
+            <strong>
+            How Does React work?
+            </strong>
+            <p>
+            what is React js in simple words? Simply put, <br /> React JS is a JavaScript-based UI development library <br /> run by Facebook and an open-source developer community. <br /> Its impact lies in the way it helps build web applications. 
+            </p>
+           </div>
+
         </div>
     );
 };
