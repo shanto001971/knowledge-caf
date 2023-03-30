@@ -3,7 +3,7 @@ import React from 'react';
 const SingleCard = (props) => {
     const {date,name,time,poster,profile}=props
     return (
-        <div>
+        <div className='mt-5'>
             <div className="card w-100 bg-base-100 shadow-xl">
                 <figure><img src={poster} alt="" /></figure>
                 <div className="card-body">
@@ -28,7 +28,18 @@ const SingleCard = (props) => {
                             </p>
                         </div>
                     </div>
-
+                    <div className="">
+                        <h1 className='mt-4 font-bold text-lg' >
+                        This is my fast
+                        </h1>
+                        
+                        <p className='mt-4 '>
+                            #beginners  #programming
+                            </p>
+                            <a  href="" className='mt-5 underline decoration-solid decoration-blue-500 text-blue-500'>
+                            Mark as read
+                            </a>
+                    </div>
                 </div>
             </div>
         </div>
