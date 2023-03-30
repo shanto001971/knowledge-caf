@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+  import {faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 const SingleCard = (props) => {
 
@@ -28,6 +30,7 @@ const SingleCard = (props) => {
                             </p>
                             <p>
                                 min read
+                                <span className='ml-2 cursor-pointer' onClick={()=>cardHandelar(props)}> <FontAwesomeIcon icon={faBookmark} /></span>
                             </p>
                         </div>
                     </div>
