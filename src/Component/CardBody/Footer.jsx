@@ -30,6 +30,15 @@ const Footer = () => {
             </p>
            </div>
 
+           <div className="">
+            <strong>
+            Purpose of useEffect other than fetching data :
+            </strong>
+            <p>
+            So you're building a component, and need to fetch <br /> some data from an API before rendering your component. <br /> You've been told that useEffect is the way for fetching data, but all you can find is <br /> discussion about side-effects
+            </p>
+           </div>
+
         </div>
     );
 };
