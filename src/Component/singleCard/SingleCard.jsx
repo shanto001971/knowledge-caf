@@ -1,7 +1,10 @@
 import React from 'react';
 
 const SingleCard = (props) => {
-    const { date, name, time, poster, profile, CardTitle } = props
+
+    
+
+    const { date, name, time, poster, profile, CardTitle,cardHandelar } = props
     return (
         <div className='mt-5'>
             <div className="card w-100 bg-base-100 shadow-xl">
