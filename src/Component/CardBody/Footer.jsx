@@ -21,7 +21,14 @@ const Footer = () => {
            </p>
            </div>
 
-           
+           <div className="">
+            <strong>
+            How react usestate works :
+            </strong>
+            <p>
+            useState is React Hook that allows you to add state to a functional component. <br /> It returns an array with two values: the current state and a function to update it. 
+            </p>
+           </div>
 
         </div>
     );
