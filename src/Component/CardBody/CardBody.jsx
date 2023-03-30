@@ -109,7 +109,7 @@ const CardBody = () => {
             <div className="w-100 bg-slate-100 lg:w-96 ">
                 <div className="text-center mt-6 shadow-lg p-5">
                     <h1 className='font-bold'>
-                        Spent time on read : {oldNumber}
+                        Spent time on read : {oldNumber} min
                     </h1>
                 </div>
                 <div className=" text-center mt-5 shadow-lg p-5 ">
