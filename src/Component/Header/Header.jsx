@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
-            <nav className='p-4  flex justify-between'>
+        <div className=''>
+            <nav className='p-4 shadow flex justify-between'>
                 <h1 className='text-2xl font-bold'>
                 Knowledge Cafe
                 </h1>
