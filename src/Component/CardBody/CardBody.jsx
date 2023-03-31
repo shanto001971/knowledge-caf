@@ -1,21 +1,34 @@
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import SingleCard from '../singleCard/SingleCard';
 
 const CardBody = () => {
     const [newItem, setNewItem] = useState([])
-    
+    const [cardId, setCardId] = useState([])
+
     let oldNumber = 0;
     const cardHandelar = (Item) => {
-        const cardItem = [...newItem, Item]
-        setNewItem(cardItem)
+        
+        if (cardId.includes(Item.id)) {
+            
+            toast.error("Already Added")
+        }
+        else{
+            const cardItem = [...newItem, Item]
+            setNewItem(cardItem)
+            const cardIdArr= [...cardId, Item.id]
+            setCardId(cardIdArr)
+        }
     }
+    
+
     {
         newItem.map(SingleItem => {
             const { time } = SingleItem;
             const newNamber = parseInt(time)
             oldNumber = oldNumber + newNamber;
-           
-            
+
+
         })
 
     }
@@ -119,12 +132,14 @@ const CardBody = () => {
                     </h1>
                 </div>
                 <div className=" mt-5 p-5 ">
-                    
+
                     {
-                        newItem.map(data=>{
-                           return <div className=" mt-5 shadow-lg p-5 ">
+                        newItem.map(data => {
+                            return <div className=" mt-5 shadow-lg p-5 ">
+                              
                                 <h1 className='font-bold'>{data.CardTitle}</h1>
                             </div>
+
                         })
                     }
                 </div>

@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-           <div className="">
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-3 mt-5'>
+           <div className="p-5 shadow">
            <strong>
            Difference between props and useState
            </strong>
@@ -21,7 +21,7 @@ const Footer = () => {
            </p>
            </div>
 
-           <div className="">
+           <div className="p-5 shadow">
             <strong>
             How react usestate works :
             </strong>
@@ -30,7 +30,7 @@ const Footer = () => {
             </p>
            </div>
 
-           <div className="">
+           <div className="p-5 shadow">
             <strong>
             Purpose of useEffect other than fetching data :
             </strong>
@@ -39,7 +39,7 @@ const Footer = () => {
             </p>
            </div>
 
-           <div className="">
+           <div className="p-5 shadow">
             <strong>
             How Does React work?
             </strong>
