@@ -6,7 +6,7 @@ const SingleCard = (props) => {
 
     
 
-    const { date, name, time, poster, profile, CardTitle,cardHandelar } = props
+    const { date, name, time, poster, profile, CardTitle,cardHandelar,minWatch } = props
     return (
         <div className='mt-5'>
             <div className="card w-100 bg-base-100 shadow-xl">
@@ -42,9 +42,11 @@ const SingleCard = (props) => {
                         <p className='p-4 '>
                             #beginners  #programming
                         </p>
-                        <a href="" className='mt-5 underline decoration-solid decoration-blue-500 text-blue-500'>
-                            Mark as read
-                        </a>
+                        <button onClick={()=>minWatch(props)} className='mt-5 underline decoration-solid decoration-blue-500 text-blue-500'>
+                        Mark as read
+                        </button>
+                           
+                        
                     </div>
                 </div>
             </div>

@@ -6,32 +6,56 @@ const CardBody = () => {
     const [newItem, setNewItem] = useState([])
     const [cardId, setCardId] = useState([])
 
-    let oldNumber = 0;
-    const cardHandelar = (Item) => {
+    const [min, setMin] = useState([])
+    const [number, setNumber] = useState(0);
+
+
+    const minWatch = (Item) => {
+
+        const cardItem = [...min, Item]
         
+
+        {
+            cardItem.map(SingleItem => {
+
+                const { time } = SingleItem;
+
+                const newNamber = parseInt(time)
+
+               const NewOldNumber = number + newNamber;
+                setNumber(NewOldNumber)
+
+            })
+
+        }
+        setMin(cardItem)
+    }
+
+    const cardHandelar = (Item) => {
+
         if (cardId.includes(Item.id)) {
-            
+
             toast.error("Already Added")
         }
-        else{
+        else {
             const cardItem = [...newItem, Item]
             setNewItem(cardItem)
-            const cardIdArr= [...cardId, Item.id]
+            const cardIdArr = [...cardId, Item.id]
             setCardId(cardIdArr)
         }
     }
-    
-
-    {
-        newItem.map(SingleItem => {
-            const { time } = SingleItem;
-            const newNamber = parseInt(time)
-            oldNumber = oldNumber + newNamber;
 
 
-        })
+    // {
+    //     newItem.map(SingleItem => {
+    //         const { time } = SingleItem;
+    //         const newNamber = parseInt(time)
+    //         oldNumber = oldNumber + newNamber;
 
-    }
+
+    //     })
+
+    // }
 
 
     return (
@@ -46,6 +70,7 @@ const CardBody = () => {
                     CardTitle={'Once upon a time, the world of computer programming was a mysterious and exclusive place.'}
                     id={1}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
 
                 <SingleCard
@@ -57,6 +82,7 @@ const CardBody = () => {
                     CardTitle={'Today, many IT jobs require a solid grasp of the top programming languages, and yes, we mean more than one. '}
                     id={2}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
                 <SingleCard
                     poster={'https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80'}
@@ -67,6 +93,7 @@ const CardBody = () => {
                     CardTitle={'If your plans to advance your career or change careers completely requires you to master a programming language, you might wonder which one to learn.'}
                     id={3}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
                 <SingleCard
                     poster={'https://media.istockphoto.com/id/1356847803/photo/hacker-in-the-hood-on-a-blue-background.jpg?s=1024x1024&w=is&k=20&c=ijMTTw7jUo-lsrsIQ4LIczCX6dvX8DhpcsfkOy9cmCc='}
@@ -77,6 +104,7 @@ const CardBody = () => {
                     CardTitle={'When making your decision, you should bear several considerations in mind, like the difficulty level you’re willing to tackle.'}
                     id={4}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
                 <SingleCard
                     poster={'https://media.istockphoto.com/id/1253918571/photo/hacker-using-laptop-with-abstract-euro-icon.jpg?s=1024x1024&w=is&k=20&c=ZcKb1ilLBz91FIISkbb-FD1BfazPh5I2bjq8ZfsJVZY='}
@@ -87,6 +115,7 @@ const CardBody = () => {
                     CardTitle={'Generally speaking, a program is a set of instructions written in a particular language (C, C++, Java, Python) to achieve a particular task.'}
                     id={5}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
                 <SingleCard
                     poster={'https://media.istockphoto.com/id/1143135693/photo/hacking-and-innovation-concept.jpg?s=1024x1024&w=is&k=20&c=mbm1IiIcCIJh3_1K8Xd8KU0gf7C6ZeWJfzqeSyqctj0='}
@@ -97,6 +126,7 @@ const CardBody = () => {
                     CardTitle={'Whether you want to develop a mobile application, get certification for programming knowledge, or learn new skills'}
                     id={6}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
                 <SingleCard
                     poster={'https://media.istockphoto.com/id/1143133445/photo/malware-and-technology-concept.jpg?s=1024x1024&w=is&k=20&c=9f_LGkHuIxYZfuI0svjQb3MWpbXAHqkJ14qfYRVtdb0='}
@@ -107,6 +137,7 @@ const CardBody = () => {
                     CardTitle={'A programming language is a way for programmers (developers) to communicate with computers. Programming languages consist of a set of rules that allows string values to be converted into various'}
                     id={7}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
                 <SingleCard
                     poster={'https://media.istockphoto.com/id/1360520324/photo/stock-market-investment-concept-with-businessman-hand-touching-digital-screen-with-forex.jpg?s=1024x1024&w=is&k=20&c=2RT0iPszaSVxb4Y4NBw7Bt5mXI_4h8ch0XQ8oFVWswc='}
@@ -117,12 +148,13 @@ const CardBody = () => {
                     CardTitle={'programming languages in demand among employers in 2023. You’ll be briefed about the details of each language, its complexity, and how it is used.'}
                     id={8}
                     cardHandelar={cardHandelar}
+                    minWatch={minWatch}
                 />
             </div>
             <div className="w-100 bg-slate-100 lg:w-96 ">
                 <div className="text-center mt-6 shadow-lg p-5">
                     <h1 className='font-bold'>
-                        Spent time on read : {oldNumber} min
+                        Spent time on read : {number} min
                     </h1>
                 </div>
                 <div className=" text-center mt-5 shadow-lg p-5 ">
@@ -136,7 +168,7 @@ const CardBody = () => {
                     {
                         newItem.map(data => {
                             return <div className=" mt-5 shadow-lg p-5 ">
-                              
+
                                 <h1 className='font-bold'>{data.CardTitle}</h1>
                             </div>
 
